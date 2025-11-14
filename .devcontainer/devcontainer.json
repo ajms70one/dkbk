@@ -1,0 +1,8 @@
+{
+  "name": "Ubuntu with Docker",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": ["--privileged"],
+  "postCreateCommand": "sudo dockerd --host=unix:///var/run/docker.sock > /tmp/dockerd.log 2>&1 &"
+}
