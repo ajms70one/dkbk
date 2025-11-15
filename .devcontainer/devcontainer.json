@@ -1,8 +1,11 @@
 {
-  "name": "Ubuntu with Docker",
-  "build": {
-    "dockerfile": "Dockerfile"
+  "name": "Docker Enabled Codespace",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
-  "runArgs": ["--privileged"],
-  "postCreateCommand": "sudo dockerd --host=unix:///var/run/docker.sock > /tmp/dockerd.log 2>&1 &"
+  "runArgs": [
+    "--privileged"
+  ],
+  "postCreateCommand": "docker info"
 }
